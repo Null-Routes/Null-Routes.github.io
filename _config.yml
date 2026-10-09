@@ -1,7 +1,7 @@
 # Site settings
 title: Null Routes
-description: Personal projects by Zachary Smith - security engineering, tooling, and experiments.
-author: Zachary Smith
+description: Personal projects by Zack Smith - security engineering, tooling, and experiments.
+author: Zack Smith
 
 # GitHub Pages user site: served from the root, so baseurl stays empty
 url: "https://null-routes.github.io"
