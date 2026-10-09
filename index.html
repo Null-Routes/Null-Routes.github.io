@@ -1,0 +1,32 @@
+---
+layout: default
+title: Home
+description: Personal projects by Zachary Smith - security engineering, tooling, and experiments.
+---
+
+<section class="shell">
+  <h1>
+    Null Routes
+    <span class="accent">Projects</span>
+  </h1>
+  <p class="subtitle">
+    A home for my personal projects: security tooling, small web experiments, and
+    the occasional joke that got out of hand.
+  </p>
+  <div class="button-row">
+    <a class="button" href="{{ '/projects/' | relative_url }}">View Projects</a>
+    <a class="button button--ghost" href="{{ '/about/' | relative_url }}">About Me</a>
+  </div>
+</section>
+
+<section class="shell">
+  <div class="section-head">
+    <h2>Recent projects</h2>
+    <a href="{{ '/projects/' | relative_url }}">All projects &rarr;</a>
+  </div>
+  <div class="project-grid">
+    {% for project in site.data.projects limit: 3 %}
+      {% include project-card.html project=project %}
+    {% endfor %}
+  </div>
+</section>

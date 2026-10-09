@@ -1,0 +1,10 @@
+# Each entry becomes a card on /projects/ (and the newest three show on the homepage).
+# Add new projects at the top.
+- title: Security Vendor Demo Bingo
+  url: /projects/vendor-bingo/
+  status: Live
+  summary: A randomized 5x5 bingo card for surviving security vendor demos. Squares are loaded from a JSON list in this repo, and you tap them off as the buzzwords fly.
+  tags:
+    - JavaScript
+    - Humor
+    - Security

@@ -1,0 +1,5 @@
+# Top nav links, in order. Add a line here and it shows up on every page.
+- title: About
+  url: /about/
+- title: Projects
+  url: /projects/

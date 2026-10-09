@@ -1,0 +1,69 @@
+---
+layout: default
+title: Security Vendor Demo Bingo
+permalink: /projects/vendor-bingo/
+description: A randomized bingo card for surviving security vendor demos.
+styles:
+  - /assets/css/bingo.css
+scripts:
+  - /assets/js/vendor-bingo.js
+---
+
+<div id="bingo-app" class="shell" data-source="{{ '/bingo_squares.json' | relative_url }}">
+  <div class="header">
+    <div class="title-block">
+      <h1>
+        Security Vendor Demo Bingo
+        <span class="accent">Live</span>
+      </h1>
+      <p class="subtitle">
+        Deal a fresh bingo card from a list of vendor buzzwords and keep score
+        while the demo unfolds.
+      </p>
+    </div>
+    <div class="controls">
+      <button id="generateBtn" class="button" type="button">
+        <span>Generate New Card</span>
+      </button>
+      <div id="status" class="status" role="status" aria-live="polite">
+        <span class="dot"></span>Ready when your vendor is.
+      </div>
+    </div>
+  </div>
+
+  <div class="layout">
+    <div class="board-container">
+      <div class="board-header">
+        <span>B</span><span>I</span><span>N</span><span>G</span><span>O</span>
+      </div>
+      <div id="board" class="board">
+        <!-- cells injected by JS -->
+      </div>
+    </div>
+
+    <div class="instructions">
+      <h2>The basics</h2>
+      <p>
+        Every time you hit <strong>Generate New Card</strong>, you get a random
+        5&times;5 card dealt from the squares in
+        <a href="{{ '/bingo_squares.json' | relative_url }}"><code>bingo_squares.json</code></a>.
+      </p>
+      <ul>
+        <li>24 random squares are used; the center tile is a free space.</li>
+        <li>Click or tap any square to mark or unmark it as you hear it in the demo.</li>
+        <li>Refreshing the page or generating a new card clears your marks.</li>
+      </ul>
+      <p class="tagline">
+        Pro tip: mirror this tab on the meeting screen or share the link so the whole team can play along.
+      </p>
+      <p class="bingo-note">
+        Want to add your own squares? Edit <code>bingo_squares.json</code> in the repo.
+        It's a plain list of strings, and at least 24 are needed.
+      </p>
+      <div class="pill">
+        LIVE BINGO
+        <span style="width:6px;height:6px;border-radius:999px;background:#22c55e;display:inline-block;"></span>
+      </div>
+    </div>
+  </div>
+</div>

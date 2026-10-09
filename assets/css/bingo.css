@@ -1,0 +1,197 @@
+/* Vendor Bingo - page-specific styles (site-wide styles live in main.css) */
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.title-block {
+  max-width: 520px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  min-width: 200px;
+}
+
+.status {
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-align: right;
+  min-height: 1.1em;
+}
+
+.status span.dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  margin-right: 6px;
+  background: #22c55e;
+}
+
+.status.error span.dot {
+  background: #ef4444;
+}
+
+.layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.board-container {
+  flex: 1 1 340px;
+  max-width: 480px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  padding: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.board-header {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+  margin-bottom: 6px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.board-header span {
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+}
+
+.cell {
+  background: radial-gradient(circle at top, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 1));
+  border-radius: 8px;
+  border: 1px solid rgba(51, 65, 85, 0.8);
+  padding: 8px;
+  min-height: 64px;
+  font-size: 0.72rem;
+  line-height: 1.25;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text);
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease,
+    transform 0.05s ease;
+}
+
+.cell:hover {
+  border-color: rgba(56, 189, 248, 0.7);
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.2);
+  transform: translateY(-1px);
+}
+
+.cell:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.cell.marked {
+  background: radial-gradient(circle at top, rgba(45, 212, 191, 0.18), var(--marked-bg));
+  border-color: var(--marked-border);
+  box-shadow: 0 0 0 1px rgba(45, 212, 191, 0.4);
+}
+
+.cell.free {
+  background: radial-gradient(circle at top, rgba(148, 163, 184, 0.3), var(--free-bg));
+  border-style: dashed;
+  border-color: rgba(148, 163, 184, 0.8);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+}
+
+.cell.free.marked {
+  border-style: solid;
+}
+
+.cell small {
+  color: var(--muted);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.instructions {
+  flex: 1 1 260px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.instructions h2 {
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+.instructions p {
+  margin: 0 0 6px 0;
+}
+
+.instructions ul {
+  margin: 4px 0 8px 0;
+  padding-left: 18px;
+}
+
+.instructions li {
+  margin-bottom: 4px;
+}
+
+.tagline {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 8px;
+  opacity: 0.85;
+}
+
+.bingo-note {
+  font-size: 0.75rem;
+  margin: 6px 0 10px 0;
+  color: var(--muted);
+  opacity: 0.9;
+}
+
+@media (max-width: 720px) {
+  .board-container,
+  .instructions {
+    flex: 1 1 100%;
+  }
+
+  .controls {
+    align-items: flex-start;
+  }
+
+  .status {
+    text-align: left;
+  }
+}

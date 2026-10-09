@@ -1,0 +1,23 @@
+# Site settings
+title: Null Routes
+description: Personal projects by Zachary Smith - security engineering, tooling, and experiments.
+author: Zachary Smith
+
+# GitHub Pages user site: served from the root, so baseurl stays empty
+url: "https://null-routes.github.io"
+baseurl: ""
+
+# Social links used in the footer
+github_username: Null-Routes
+linkedin_url: "https://www.linkedin.com/in/secopsengineer/"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - node_modules

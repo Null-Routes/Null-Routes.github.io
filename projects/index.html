@@ -1,0 +1,19 @@
+---
+layout: default
+title: Projects
+permalink: /projects/
+description: Personal projects by Zachary Smith.
+---
+
+<section class="shell">
+  <h1>Projects</h1>
+  <p class="subtitle">Things I've built on my own time. New ones get added as they ship.</p>
+</section>
+
+<section class="shell">
+  <div class="project-grid">
+    {% for project in site.data.projects %}
+      {% include project-card.html project=project %}
+    {% endfor %}
+  </div>
+</section>
