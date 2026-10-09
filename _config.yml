@@ -9,7 +9,7 @@ baseurl: ""
 
 # Social links used in the footer
 github_username: Null-Routes
-linkedin_url: "https://www.linkedin.com/in/secopsengineer/"
+linkedin_url: "https://www.linkedin.com/in/nullroutes/"
 
 # Build settings
 markdown: kramdown
