@@ -13,19 +13,26 @@
   max-width: 520px;
 }
 
+/* Right-hand column: both buttons share one width, status sits underneath */
 .controls {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: stretch;
   gap: 8px;
-  min-width: 200px;
+  flex: 0 0 240px;
+  margin-left: auto;
+}
+
+.controls .button {
+  justify-content: center;
+  width: 100%;
 }
 
 .status {
   font-size: 0.75rem;
   color: var(--muted);
   text-align: right;
-  min-height: 1.1em;
+  min-height: 2.6em;
 }
 
 .status span.dot {
@@ -136,6 +143,12 @@
   border-style: solid;
 }
 
+/* Stack "FREE" over "Center" instead of running them together on one line */
+.cell.free {
+  flex-direction: column;
+  gap: 2px;
+}
+
 .cell small {
   color: var(--muted);
   font-size: 0.6rem;
@@ -188,10 +201,46 @@
   }
 
   .controls {
-    align-items: flex-start;
+    flex: 1 1 100%;
   }
 
   .status {
     text-align: left;
   }
+}
+
+/* ---------- Share dialog ---------- */
+
+.share-dialog {
+  width: min(92vw, 520px);
+  max-height: 92vh;
+  overflow: auto;
+  padding: 20px;
+  color: var(--text);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 1));
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 16px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+}
+
+.share-dialog::backdrop {
+  background: rgba(2, 6, 23, 0.75);
+}
+
+.share-dialog__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 65vh;
+  object-fit: contain;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+}
+
+.share-dialog__msg {
+  min-height: 1.2em;
+  margin: 8px 0 0 0;
+  font-size: 0.75rem;
+  color: var(--muted);
 }
