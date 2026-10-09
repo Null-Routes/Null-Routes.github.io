@@ -25,6 +25,9 @@ scripts:
       <button id="generateBtn" class="button" type="button">
         <span>Generate New Card</span>
       </button>
+      <button id="shareBtn" class="button button--ghost" type="button" disabled>
+        <span>Share Card</span>
+      </button>
       <div id="status" class="status" role="status" aria-live="polite">
         <span class="dot"></span>Ready when your vendor is.
       </div>
@@ -67,3 +70,15 @@ scripts:
     </div>
   </div>
 </div>
+
+<dialog id="shareDialog" class="share-dialog" aria-labelledby="shareTitle">
+  <h2 id="shareTitle">Your card</h2>
+  <img id="shareImg" class="share-dialog__img" alt="Bingo card with the marked squares highlighted" />
+  <p id="shareMsg" class="share-dialog__msg" role="status" aria-live="polite"></p>
+  <div class="button-row">
+    <a id="shareDownload" class="button" href="#" download="vendor-bingo-card.png">Download PNG</a>
+    <button id="shareNative" class="button button--ghost" type="button" hidden>Share&hellip;</button>
+    <button id="shareCopy" class="button button--ghost" type="button" hidden>Copy image</button>
+    <button id="shareClose" class="button button--ghost" type="button">Close</button>
+  </div>
+</dialog>
