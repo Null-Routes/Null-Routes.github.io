@@ -402,7 +402,7 @@
   </section>
   ${body}
 </main>
-<footer>Generated using <a href="https://null-routes.github.io/projects/interview-notes/" target="_blank" rel="noopener noreferrer">Null Routes</a> &middot; ${esc(new Date().toLocaleString("en-US"))}</footer>
+<footer>Report generated using <a href="https://null-routes.github.io/projects/interview-notes/" target="_blank" rel="noopener noreferrer">Null Routes</a> &middot; ${esc(new Date().toLocaleString("en-US"))}</footer>
 </body></html>`;
   }
 
