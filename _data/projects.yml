@@ -1,10 +1,16 @@
 # Each entry becomes a card on /projects/ (and the newest three show on the homepage).
 # Add new projects at the top.
+- title: Interview Notes
+  url: /projects/interview-notes/
+  status: Live
+  summary: A browser-based interview companion. Pick a role, choose your questions, capture notes and ratings, and download a weighted report. Question sets are JSON files in this repo and nothing leaves your browser.
+  tags:
+    - Hiring
+    - Security
 - title: Security Vendor Demo Bingo
   url: /projects/vendor-bingo/
   status: Live
   summary: A randomized 5x5 bingo card for surviving security vendor demos. Squares are loaded from a JSON list in this repo, and you tap them off as the buzzwords fly.
   tags:
-    - JavaScript
     - Humor
     - Security
