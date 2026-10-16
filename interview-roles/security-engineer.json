@@ -1,0 +1,116 @@
+{
+  "role": "Security Engineer",
+  "description": "Core security engineering: secure design, cloud and application security, vulnerability management, detection and response, and working with engineering teams.",
+  "categories": [
+    {
+      "name": "Collaboration & Influence",
+      "weight": 4,
+      "questions": [
+        {
+          "question": "Tell me about a time you got an engineering team to adopt a security fix they didn't initially want to prioritize.",
+          "listenFor": "Listened first, tied the fix to business or engineering outcomes, offered practical help rather than just a ticket."
+        },
+        {
+          "question": "How do you explain the severity of a vulnerability to a developer who thinks it's unlikely to be exploited?",
+          "listenFor": "Uses exploitability and impact evidence, demonstrates rather than lectures, stays respectful."
+        },
+        {
+          "question": "Describe a security recommendation you made that was rejected. What did you do next?",
+          "listenFor": "Accepted the decision, documented residual risk, revisited with new information. No resentment."
+        },
+        {
+          "question": "How do you balance being a helpful partner with being the person who says no?",
+          "listenFor": "Offers alternatives and compensating controls, reserves hard stops for real risk."
+        }
+      ]
+    },
+    {
+      "name": "Application & Cloud Security",
+      "weight": 5,
+      "questions": [
+        {
+          "question": "Walk me through how you would threat model a new internal web application.",
+          "listenFor": "Assets, trust boundaries, data flows, STRIDE or similar, prioritized mitigations."
+        },
+        {
+          "question": "What are the most common web application vulnerabilities you see today, and how do you prevent them?",
+          "listenFor": "Injection, broken access control, SSRF, insecure deserialization, secrets exposure; fixes at the framework and design level."
+        },
+        {
+          "question": "How would you secure a workload running in AWS or Azure from scratch?",
+          "listenFor": "Least-privilege IAM, network segmentation, encryption, logging, secrets management, IaC, guardrails."
+        },
+        {
+          "question": "How do you manage secrets and credentials across applications and pipelines?",
+          "listenFor": "Secrets managers, rotation, short-lived credentials, no secrets in code or images."
+        }
+      ]
+    },
+    {
+      "name": "Vulnerability & Risk Management",
+      "weight": 4,
+      "questions": [
+        {
+          "question": "How do you prioritize remediation when a scanner returns thousands of findings?",
+          "listenFor": "Risk-based triage: exploitability, exposure, asset criticality, compensating controls. Not CVSS alone."
+        },
+        {
+          "question": "Describe how you would build or improve a vulnerability management program.",
+          "listenFor": "Asset inventory, scan coverage, SLAs by severity, ownership, metrics, exception process."
+        },
+        {
+          "question": "A critical vulnerability is disclosed in a widely used library. What are your first steps?",
+          "listenFor": "Identify exposure, inventory via SBOM or scanning, mitigate, communicate, track to closure."
+        },
+        {
+          "question": "How do you decide when to accept a risk rather than fix it?",
+          "listenFor": "Documented risk acceptance with owner, expiry, and compensating controls."
+        }
+      ]
+    },
+    {
+      "name": "Detection & Incident Response",
+      "weight": 3,
+      "questions": [
+        {
+          "question": "Walk me through an incident you investigated from alert to resolution.",
+          "listenFor": "Structured triage, scoping, containment, root cause, lessons learned."
+        },
+        {
+          "question": "What makes a good detection rule? How do you reduce false positives?",
+          "listenFor": "Clear hypothesis, tested against data, tuned with context, documented response steps."
+        },
+        {
+          "question": "What logs would you want available when investigating a suspected account compromise?",
+          "listenFor": "Identity provider, cloud audit logs, endpoint, network, and application logs; retention awareness."
+        },
+        {
+          "question": "How do you keep your skills current on attacker techniques?",
+          "listenFor": "Concrete sources and habits such as ATT&CK, threat reports, labs, CTFs."
+        }
+      ]
+    },
+    {
+      "name": "Security Fundamentals",
+      "weight": 3,
+      "questions": [
+        {
+          "question": "Explain how TLS establishes a secure connection, and what can go wrong.",
+          "listenFor": "Handshake, certificates, trust chains, common misconfigurations."
+        },
+        {
+          "question": "What is the difference between authentication and authorization, and how do failures in each show up?",
+          "listenFor": "Clear distinction; examples such as broken access control and weak MFA."
+        },
+        {
+          "question": "How would you design access control for a system with several user roles and sensitive data?",
+          "listenFor": "Least privilege, RBAC or ABAC, auditing, separation of duties."
+        },
+        {
+          "question": "What does defense in depth mean to you in practice?",
+          "listenFor": "Layered, independent controls instead of a single point of failure."
+        }
+      ]
+    }
+  ]
+}
