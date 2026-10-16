@@ -1,0 +1,86 @@
+---
+layout: default
+title: Interview Notes
+permalink: /projects/interview-notes/
+description: A browser-based interview notes tool with role-based question sets, weighted scoring, and a downloadable report.
+styles:
+  - /assets/css/interview.css
+scripts:
+  - /assets/js/interview.js
+---
+
+<div id="interview-app" data-roles="{{ '/interview-roles/' | relative_url }}">
+  <section class="shell">
+    <h1>
+      Interview Notes
+      <span class="accent">Live</span>
+    </h1>
+    <p class="subtitle">
+      Pick a role, choose your questions, take notes and ratings as you go, then download a
+      weighted report. Everything runs in your browser and nothing is uploaded.
+    </p>
+  </section>
+    <!-- Step 0: choose a role (question sets are loaded from interview-roles/ in the repo) -->
+    <section id="roles-section" class="shell">
+      <h2>Choose a role to interview for</h2>
+      <p class="muted" id="roles-status">Loading question sets...</p>
+      <div id="role-grid" class="role-grid"></div>
+
+      <div class="button-row">
+        <button type="button" class="button button--ghost" id="custom-btn">Upload custom JSON</button>
+        <button type="button" class="button button--ghost hidden" id="folder-btn">Load a folder of JSON files</button>
+      </div>
+      <input type="file" id="custom-input" accept=".json,application/json" multiple hidden>
+      <input type="file" id="folder-input" webkitdirectory multiple hidden>
+      <p id="load-error" class="error"></p>
+    </section>
+
+    <!-- Step 1: setup -->
+    <section id="setup-section" class="shell hidden">
+      <div class="section-head">
+        <h2>Interview setup</h2>
+        <button type="button" class="button button--ghost" id="change-role-btn">Change role</button>
+      </div>
+      <div class="grid">
+        <label>Candidate name <input type="text" id="candidate"></label>
+        <label>Target role <input type="text" id="role" placeholder="e.g. Security Engineer"></label>
+        <label>Interviewer <input type="text" id="interviewer"></label>
+        <label>Date <input type="date" id="date"></label>
+      </div>
+
+      <h3>Categories</h3>
+      <p class="muted"><a href="#" id="select-all">Select all</a> · <a href="#" id="select-none">Clear</a></p>
+      <div id="category-list"></div>
+
+      <button id="start-btn" class="button">Start interview</button>
+      <p id="setup-error" class="error"></p>
+    </section>
+
+    <!-- Step 2: interview -->
+    <section id="interview-section" class="hidden">
+      <div class="shell summary-bar">
+        <span id="interview-meta"></span>
+        <button id="back-btn" class="button button--ghost">Back to setup</button>
+      </div>
+
+      <div id="questions"></div>
+
+      <div class="shell">
+        <h2>Wrap-up</h2>
+        <label>Overall notes
+          <textarea id="overall-notes" rows="5" placeholder="Overall impressions, strengths, concerns..."></textarea>
+        </label>
+        <label>Recommendation
+          <select id="recommendation">
+            <option value="">Select...</option>
+            <option>Strong hire</option>
+            <option>Hire</option>
+            <option>Lean no hire</option>
+            <option>No hire</option>
+          </select>
+        </label>
+        <button id="download-btn" class="button">Download interview report</button>
+      </div>
+    </section>
+  
+</div>
