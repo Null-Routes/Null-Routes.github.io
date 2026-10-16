@@ -354,9 +354,6 @@
   *{box-sizing:border-box}
   html{min-height:100%;background:radial-gradient(circle at top,#020617 0,#020617 30%,#000 100%);background-attachment:fixed;background-repeat:no-repeat;background-size:cover}
   body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--text);line-height:1.5}
-  .nav{position:sticky;top:0;background:rgba(2,6,23,.8);backdrop-filter:blur(10px);border-bottom:1px solid rgba(148,163,184,.25)}
-  .nav div{max-width:960px;margin:0 auto;height:56px;padding:0 24px;display:flex;align-items:center;gap:8px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
-  .nav div::before{content:"";width:8px;height:8px;border-radius:999px;background:var(--accent);box-shadow:0 0 12px rgba(56,189,248,.7)}
   main{max-width:960px;margin:0 auto;padding:32px 24px}
   .shell{background:linear-gradient(135deg,rgba(15,23,42,.95),rgb(15,23,42));border:1px solid rgba(148,163,184,.25);border-radius:16px;box-shadow:0 24px 60px rgba(15,23,42,.9),0 0 0 1px rgba(15,23,42,.8);padding:24px;margin-bottom:24px}
   h1{margin:0 0 4px;font-size:1.6rem;letter-spacing:.03em}
@@ -380,10 +377,10 @@
   .rating{margin:0 0 8px}
   .notes{margin:0;color:var(--muted);font-size:.92rem}
   .overall{color:var(--muted);margin:8px 0 0;font-size:.95rem}
+  footer a{color:var(--accent)}
   footer{text-align:center;padding:16px 24px;font-size:.8rem;color:var(--muted);border-top:1px solid rgba(148,163,184,.15)}
-  @media print{html{background:#fff}body{color:#111}.nav,footer{display:none}.shell,.q,.meta div{background:#fff;box-shadow:none;border-color:#ccc}.cat-head h2,.meta .score strong{color:#0369a1}.notes,.overall,.subtitle{color:#333}.pill,.pill--accent{color:#111;background:none}}
+  @media print{html{background:#fff}body{color:#111}footer{display:none}.shell,.q,.meta div{background:#fff;box-shadow:none;border-color:#ccc}.cat-head h2,.meta .score strong{color:#0369a1}.notes,.overall,.subtitle{color:#333}.pill,.pill--accent{color:#111;background:none}}
 </style></head><body>
-<div class="nav"><div>Null Routes</div></div>
 <main>
   <section class="shell">
     <h1>Interview Report</h1>
@@ -405,7 +402,7 @@
   </section>
   ${body}
 </main>
-<footer>Interview Notes &middot; Null Routes &middot; Generated ${esc(new Date().toLocaleString())}</footer>
+<footer>Generated using <a href="https://null-routes.github.io/projects/interview-notes/" target="_blank" rel="noopener noreferrer">Null Routes</a> &middot; ${esc(new Date().toLocaleString("en-US"))}</footer>
 </body></html>`;
   }
 
