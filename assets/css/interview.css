@@ -1,0 +1,222 @@
+/* Interview Notes - page-specific styles (site-wide styles live in main.css).
+   Everything is scoped to #interview-app so nothing leaks into the nav or other pages. */
+
+#interview-app .hidden { display: none !important; }
+
+#interview-app .shell { margin-bottom: 24px; }
+#interview-app .shell + .shell { margin-top: 0; }
+
+#interview-app h3 {
+  margin: 20px 0 4px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text);
+}
+
+#interview-app p { color: var(--muted); font-size: 0.95rem; }
+#interview-app .subtitle { margin: 0; font-size: 0.9rem; }
+#interview-app .muted { color: var(--muted); font-size: 0.85rem; margin-top: 0; }
+#interview-app .muted a { text-decoration: none; }
+#interview-app .muted a:hover { text-decoration: underline; }
+#interview-app .error { color: #f87171; margin: 8px 0 0; font-size: 0.9rem; }
+#interview-app .error:empty { display: none; }
+
+/* ---------- Forms ---------- */
+#interview-app .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+#interview-app label {
+  display: block;
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+#interview-app input[type="text"],
+#interview-app input[type="date"],
+#interview-app select,
+#interview-app textarea {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  padding: 8px 10px;
+  font: inherit;
+  font-size: 0.9rem;
+  letter-spacing: normal;
+  color: var(--text);
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+#interview-app input[type="text"]:focus,
+#interview-app input[type="date"]:focus,
+#interview-app select:focus,
+#interview-app textarea:focus {
+  border-color: rgba(56, 189, 248, 0.7);
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.2);
+}
+
+#interview-app textarea { resize: vertical; }
+#interview-app input[type="checkbox"] { accent-color: #38bdf8; }
+#interview-app input[type="date"] { color-scheme: dark; }
+#interview-app .button:hover { filter: brightness(1.08); }
+#interview-app .button--ghost:hover { filter: none; border-color: rgba(56, 189, 248, 0.6); color: var(--accent); }
+
+/* ---------- Setup ---------- */
+#interview-app .category-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+#interview-app .category-option input { margin: 0; }
+#interview-app .category-option .cat-name {
+  flex: 1;
+  margin: 0;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: normal;
+  color: var(--text);
+}
+#interview-app .category-option .count { color: var(--muted); font-size: 0.8rem; }
+#interview-app .category-block { border-bottom: 1px solid var(--border); padding: 8px 0; }
+#interview-app .toggle-btn { padding: 3px 10px; font-size: 0.7rem; }
+#interview-app .question-picks { margin: 6px 0 6px 26px; }
+#interview-app .pick {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-weight: 400;
+  font-size: 0.88rem;
+  letter-spacing: normal;
+  margin-bottom: 4px;
+}
+#interview-app .pick input { margin-top: 4px; }
+#interview-app .weight-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+#interview-app .weight-select { width: auto; margin-top: 0; padding: 3px 6px; border-radius: 999px; }
+#interview-app #start-btn { margin-top: 20px; }
+
+/* ---------- Role picker ---------- */
+#interview-app .role-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+#interview-app .role-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.05s ease;
+}
+#interview-app .role-card:hover,
+#interview-app .role-card:focus-visible {
+  border-color: rgba(56, 189, 248, 0.7);
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.2);
+  transform: translateY(-1px);
+  outline: none;
+}
+#interview-app .role-card__title { font-size: 1rem; font-weight: 600; letter-spacing: 0.02em; }
+#interview-app .role-card__desc { font-size: 0.85rem; color: var(--muted); }
+#interview-app .role-card .tag-list { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 0; }
+#interview-app .tag {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: var(--accent);
+  background: var(--accent-soft);
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Interview ---------- */
+#interview-app .summary-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 14px 20px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+#interview-app .category-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 32px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.4);
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+#interview-app .weight-badge {
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  background: radial-gradient(circle at top, rgba(56, 189, 248, 0.1), transparent);
+  color: var(--accent);
+  letter-spacing: 0.08em;
+}
+
+/* Question cards use the site's project-card look */
+#interview-app .question-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 14px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+#interview-app .question-card:focus-within {
+  border-color: rgba(56, 189, 248, 0.7);
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.2);
+}
+#interview-app .question-card h4 { margin: 0 0 8px; font-size: 1rem; letter-spacing: 0.02em; }
+#interview-app .listen-for {
+  background: var(--accent-soft);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 10px;
+  padding: 8px 12px;
+  margin: 0 0 12px;
+  font-size: 0.82rem;
+  color: #cbd5f5;
+}
+#interview-app .listen-for strong { color: var(--accent); }
+#interview-app .rating-row { display: flex; align-items: center; gap: 12px; }
+#interview-app .rating-row label { margin: 0; }
+#interview-app .rating-row select { width: auto; margin-top: 0; border-radius: 999px; }
+
+@media (max-width: 720px) {
+  #interview-app .question-picks { margin-left: 0; }
+}
